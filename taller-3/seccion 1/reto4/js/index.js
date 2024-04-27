@@ -53,33 +53,32 @@ while (boolean) {
             break
         }
         case 2: {
-            let nameEvent = prompt(
-                'Ingrese el nombre del evento que desea buscar: '
-            )
-            // const filteredEvents = arr.filter(e => e.event === nameEvent)
-
-            const filteredEvents = mockedArr.filter(e => e.name === nameEvent)
-
-
-            // if (filteredEvents.length === 0) {
+            let nameEvent = prompt('Ingrese el nombre del evento que desea buscar: ');
+            const filteredEvents = arr.filter(e => e.name === nameEvent)
             if (!filteredEvents.length) {
                 console.log('No existe ningun evento con ese nombre')
                 break
-            }
+            };
             filteredEvents.forEach((event, index) => {
                 console.log(event)
                 console.log(`${index + 1}. ${event.name} | ${event.date}`)
             })
-            break
-        }
+            break;
+        };
         case 3: {
             console.log(arr)
-            break
-        }
+            break;
+        };
+        case 4: {
+            let update = prompt("Cual es el evento que deseas modificar: ");
+            if(arr.forEach(e => e === update)){
+                
+            }
+        };
         
         case 6: {
             boolean = false
-            break
-        }
-    }
-}
+            break;
+        };
+    };
+};

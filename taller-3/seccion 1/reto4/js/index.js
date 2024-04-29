@@ -1,27 +1,5 @@
 let id = 0
 let boolean = true
-const mockedArr = [
-    {
-        id: 1, // Identificador único
-        name: 'Evento 1', // Nombre del Evento
-        date: '2021-12-31', // Fecha del Evento
-        description: 'Descripción del Evento 1', // Descripción del Evento
-    },
-    {
-        id: 2, // Identificador único
-        name: 'Evento 2', // Nombre del Evento
-        date: '2024-04-24', // Fecha del Evento
-        description: 'Descripción del Evento 2', // Descripción del Evento
-    },
-    {
-        id: 3, // Identificador único
-        name: 'Evento 3', // Nombre del Evento
-        date: '2021-12-31', // Fecha del Evento
-        description: 'Descripción del Evento 3', // Descripción del Evento
-    },
-]
-const arr = []
-
 function obj(a, b, c, d) {
     return {
         id: d,
@@ -71,11 +49,26 @@ while (boolean) {
         };
         case 4: {
             let update = prompt("Cual es el evento que deseas modificar: ");
-            if(arr.forEach(e => e === update)){
-                
-            }
+            let eventUpdate = arr.find(e => e.name === update);
+
+            if(eventUpdate){
+                for(let i in eventUpdate){
+                    let newValor = prompt(`Ingresa el nuevo nombre que: `).trim();
+                    if(newValor !== ""){
+                        eventUpdate[key] = newValor;
+                    };
+                };
+            } else{
+                console.log("No se encontro ningun evento");
+            };
+            break;
         };
         
+        case 5: {
+            let eventDeleted = prompt("Ingrese el evento a eliminar: ");
+
+        }
+
         case 6: {
             boolean = false
             break;
